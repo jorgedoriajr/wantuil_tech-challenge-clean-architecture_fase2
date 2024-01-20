@@ -10,7 +10,7 @@ public class UpdatePaymentStatusWebhookImpl implements UpdatePaymentStatusWebhoo
 
     private final UpdatePaymentStatusController updatePaymentStatusController;
 
-    public void updatePaymentStatus(UpdatePaymentStatusRequest updatePaymentStatusRequest) {
+    public void updatePaymentStatus(final UpdatePaymentStatusRequest updatePaymentStatusRequest) {
         updatePaymentStatusController.updatePaymentStatus(updatePaymentStatusRequest);
     }
 }

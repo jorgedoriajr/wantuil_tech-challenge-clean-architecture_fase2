@@ -1,6 +1,5 @@
 package br.com.fiap.techchallenge.frameworks.web.customer;
 
-import br.com.fiap.techchallenge.interfaces.controllers.customer.FindCustomerByCpfController;
 import br.com.fiap.techchallenge.interfaces.controllers.customer.responses.CustomerResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

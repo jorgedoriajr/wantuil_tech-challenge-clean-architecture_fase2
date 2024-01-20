@@ -1,6 +1,5 @@
 package br.com.fiap.techchallenge.frameworks.web.order;
 
-import br.com.fiap.techchallenge.interfaces.controllers.order.UpdatePaymentStatusController;
 import br.com.fiap.techchallenge.interfaces.controllers.order.requests.UpdatePaymentStatusRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

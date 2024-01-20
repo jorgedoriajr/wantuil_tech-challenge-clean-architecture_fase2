@@ -1,6 +1,5 @@
 package br.com.fiap.techchallenge.frameworks.web.product;
 
-import br.com.fiap.techchallenge.interfaces.controllers.product.CreateProductController;
 import br.com.fiap.techchallenge.interfaces.controllers.product.requests.ProductRequest;
 import br.com.fiap.techchallenge.interfaces.controllers.product.responses.ProductResponse;
 import io.swagger.v3.oas.annotations.Operation;

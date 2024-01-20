@@ -1,6 +1,5 @@
 package br.com.fiap.techchallenge.frameworks.web.product;
 
-import br.com.fiap.techchallenge.interfaces.controllers.product.RemoveProductController;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.web.bind.annotation.DeleteMapping;

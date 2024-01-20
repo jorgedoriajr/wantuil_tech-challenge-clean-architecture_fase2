@@ -2,7 +2,6 @@ package br.com.fiap.techchallenge.frameworks.web.product;
 
 import java.util.List;
 
-import br.com.fiap.techchallenge.interfaces.controllers.product.FindProductByCategoryController;
 import br.com.fiap.techchallenge.interfaces.controllers.product.responses.ProductResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

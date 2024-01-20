@@ -53,7 +53,7 @@ public class OrderRepositoryImpl implements OrderGateway {
     }
 
     @Override
-    public Order updateDeliveryStatus(String id, String deliveryStatus) {
+    public Order updateDeliveryStatus(final String id, final String deliveryStatus) {
         var orderEntity = springDataOrderRepository.findById(UUID.fromString(id)).orElseThrow();
 
         orderEntity.setDeliveryStatus(deliveryStatus);
@@ -63,7 +63,7 @@ public class OrderRepositoryImpl implements OrderGateway {
     }
 
     @Override
-    public Order updatePaymentStatus(String id, String paymentStatus) {
+    public Order updatePaymentStatus(final String id, final String paymentStatus) {
         var orderEntity = springDataOrderRepository.findById(UUID.fromString(id)).orElseThrow();
 
         orderEntity.setPaymentStatus(paymentStatus);

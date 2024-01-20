@@ -2,7 +2,6 @@ package br.com.fiap.techchallenge.frameworks.web.order;
 
 import java.util.List;
 
-import br.com.fiap.techchallenge.interfaces.controllers.order.FindOrderByDeliveryStatusController;
 import br.com.fiap.techchallenge.interfaces.controllers.order.responses.OrderResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
