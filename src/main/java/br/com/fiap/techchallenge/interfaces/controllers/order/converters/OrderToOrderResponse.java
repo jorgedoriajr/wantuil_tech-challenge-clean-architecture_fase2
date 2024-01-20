@@ -1,0 +1,30 @@
+package br.com.fiap.techchallenge.interfaces.controllers.order.converters;
+
+import java.util.Objects;
+
+import br.com.fiap.techchallenge.domain.entities.Order;
+import br.com.fiap.techchallenge.interfaces.controllers.customer.converters.CustomerToCustomerResponse;
+import br.com.fiap.techchallenge.interfaces.controllers.order.responses.OrderResponse;
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+public class OrderToOrderResponse {
+
+    private final CustomerToCustomerResponse customerToCustomerResponse;
+
+    public OrderResponse convert(Order order) {
+        return OrderResponse
+                .builder()
+                .id(order.getId())
+                .customer(Objects.nonNull(order.getCustomer()) ? customerToCustomerResponse.convert(order.getCustomer()) : null)
+                .items(order.getItems().stream().map(item -> OrderResponse.OrderItemResponse.builder()
+                        .product(item.getProduct())
+                        .price(item.getPrice())
+                        .quantity(item.getQuantity())
+                        .build()).toList())
+                .status(order.getStatus().getStatus().toString())
+                .created(order.getCreated())
+                .amount(order.getAmount().getAmount())
+                .build();
+    }
+}
