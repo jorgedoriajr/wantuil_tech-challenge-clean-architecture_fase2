@@ -16,7 +16,7 @@ public class OrderToOrderEntity {
 
     private final OrderItemToOrderItemEntity orderItemToOrderItemEntity;
 
-    public OrderEntity convert(Order order) {
+    public OrderEntity convert(final Order order) {
         return OrderEntity
                 .builder()
                 .id(Objects.nonNull(order.getId()) ? UUID.fromString(order.getId()) : null)
@@ -25,7 +25,7 @@ public class OrderToOrderEntity {
                         .stream()
                         .map(orderItemToOrderItemEntity::convert)
                         .toList())
-                .amount(order.getAmount().getAmount())
+                .amount(order.getAmount().amount())
                 .status(order.getStatus().getStatus().toString())
                 .created(order.getCreated())
                 .build();

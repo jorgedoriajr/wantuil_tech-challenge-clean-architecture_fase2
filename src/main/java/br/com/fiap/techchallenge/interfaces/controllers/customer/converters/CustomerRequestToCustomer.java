@@ -11,10 +11,10 @@ public class CustomerRequestToCustomer {
 
     public Customer convert(final CustomerRequest customerRequest) {
         return Customer.builder()
-                .id(customerRequest.getId())
-                .cpf(new Cpf(customerRequest.getCpf()))
-                .name(new CustomerName(customerRequest.getName()))
-                .email(new Email(customerRequest.getEmail()))
+                .id(customerRequest.id())
+                .cpf(new Cpf(customerRequest.cpf()))
+                .name(new CustomerName(customerRequest.name()))
+                .email(new Email(customerRequest.email()))
                 .build();
     }
 }

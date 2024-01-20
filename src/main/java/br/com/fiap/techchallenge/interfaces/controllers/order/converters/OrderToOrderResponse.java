@@ -12,19 +12,19 @@ public class OrderToOrderResponse {
 
     private final CustomerToCustomerResponse customerToCustomerResponse;
 
-    public OrderResponse convert(Order order) {
+    public OrderResponse convert(final Order order) {
         return OrderResponse
                 .builder()
                 .id(order.getId())
                 .customer(Objects.nonNull(order.getCustomer()) ? customerToCustomerResponse.convert(order.getCustomer()) : null)
                 .items(order.getItems().stream().map(item -> OrderResponse.OrderItemResponse.builder()
-                        .product(item.getProduct())
-                        .price(item.getPrice())
-                        .quantity(item.getQuantity())
+                        .product(item.product())
+                        .price(item.price())
+                        .quantity(item.quantity())
                         .build()).toList())
                 .status(order.getStatus().getStatus().toString())
                 .created(order.getCreated())
-                .amount(order.getAmount().getAmount())
+                .amount(order.getAmount().amount())
                 .build();
     }
 }

@@ -14,7 +14,7 @@ public class FindOrderByStatusWebImpl implements FindOrderByStatusWeb {
 
     private final FindOrderByStatusController findOrderByStatusController;
 
-    public List<OrderResponse> findByStatus(String status) {
+    public List<OrderResponse> findByStatus(final String status) {
         return findOrderByStatusController.findByStatus(status);
     }
 }

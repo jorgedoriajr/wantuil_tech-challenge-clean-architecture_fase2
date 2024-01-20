@@ -13,9 +13,9 @@ public class OrderItemToOrderItemEntity {
     public OrderItemEntity convert(final OrderItem orderItem) {
         return OrderItemEntity
                 .builder()
-                .product(Objects.nonNull(orderItem.getProduct()) ? UUID.fromString(orderItem.getProduct()) : null)
-                .quantity(orderItem.getQuantity())
-                .price(orderItem.getPrice())
+                .product(Objects.nonNull(orderItem.product()) ? UUID.fromString(orderItem.product()) : null)
+                .quantity(orderItem.quantity())
+                .price(orderItem.price())
                 .build();
     }
 }

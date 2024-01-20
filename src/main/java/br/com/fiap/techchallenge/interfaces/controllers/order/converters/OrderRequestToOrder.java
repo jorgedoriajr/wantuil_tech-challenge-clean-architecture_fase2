@@ -18,18 +18,18 @@ public class OrderRequestToOrder {
     public Order convert(final OrderRequest orderRequest) {
         return Order
                 .builder()
-                .id(orderRequest.getId())
-                .customer(Objects.nonNull(orderRequest.getCustomer()) ? customerRequestToCustomer.convert(orderRequest.getCustomer()) : null)
-                .items(orderRequest.getItems().stream()
+                .id(orderRequest.id())
+                .customer(Objects.nonNull(orderRequest.customer()) ? customerRequestToCustomer.convert(orderRequest.customer()) : null)
+                .items(orderRequest.items().stream()
                         .map(item -> OrderItem.builder()
-                                .product(item.getProduct())
-                                .quantity(item.getQuantity())
-                                .price(item.getPrice())
+                                .product(item.product())
+                                .quantity(item.quantity())
+                                .price(item.price())
                                 .build())
                         .toList())
-                .status(new OrderStatus(orderRequest.getStatus()))
-                .created(orderRequest.getCreated())
-                .amount(new OrderAmount(orderRequest.getAmount()))
+                .status(new OrderStatus(orderRequest.status()))
+                .created(orderRequest.created())
+                .amount(new OrderAmount(orderRequest.amount()))
                 .build();
     }
 }

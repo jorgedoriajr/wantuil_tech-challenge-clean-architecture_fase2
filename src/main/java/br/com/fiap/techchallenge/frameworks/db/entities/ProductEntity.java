@@ -20,12 +20,19 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ProductEntity {
+
     @Id
     @GeneratedValue
     private UUID id;
+
     private String name;
+
     private String category;
+
     private Double price;
+
     private String description;
+
     private String image;
+
 }

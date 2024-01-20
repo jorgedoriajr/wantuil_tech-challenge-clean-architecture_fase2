@@ -1,23 +1,13 @@
 package br.com.fiap.techchallenge.domain.vos;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+public record ProductDescription(String description) {
 
-@Getter
-@ToString
-@EqualsAndHashCode
-public class ProductDescription {
-    private String description;
-
-    public ProductDescription(String description) {
+    public ProductDescription {
         validate(description);
-
-        this.description = description;
 
     }
 
-    private void validate(String description) {
+    private void validate(final String description) {
         if (description == null) {
             throw new IllegalArgumentException("Description cannot be null");
         }

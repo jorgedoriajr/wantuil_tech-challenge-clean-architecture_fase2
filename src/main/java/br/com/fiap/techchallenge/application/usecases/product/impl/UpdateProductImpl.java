@@ -10,7 +10,7 @@ public class UpdateProductImpl implements UpdateProduct {
     private final ProductGateway productGateway;
 
     @Override
-    public Product update(String id, Product product) {
+    public Product update(final String id, final Product product) {
         return productGateway.update(id, product);
     }
 

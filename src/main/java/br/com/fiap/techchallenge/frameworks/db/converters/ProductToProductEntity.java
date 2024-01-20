@@ -10,15 +10,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductToProductEntity {
 
-    public ProductEntity convert(Product product) {
+    public ProductEntity convert(final Product product) {
         return ProductEntity
                 .builder()
                 .id(Objects.nonNull(product.getId()) ? UUID.fromString(product.getId()) : null)
-                .name(product.getName().getName())
+                .name(product.getName().name())
                 .category(product.getCategory().getCategory().name())
-                .price(product.getPrice().getPrice())
-                .description(product.getDescription().getDescription())
-                .image(product.getImage().getImage())
+                .price(product.getPrice().price())
+                .description(product.getDescription().description())
+                .image(product.getImage().image())
                 .build();
     }
 }

@@ -14,9 +14,9 @@ public class CustomerToCustomerEntity {
         return CustomerEntity
                 .builder()
                 .id(Objects.nonNull(customer.getId()) ? UUID.fromString(customer.getId()) : null)
-                .name(customer.getName().getName())
-                .email(customer.getEmail().getEmail())
-                .cpf(customer.getCpf().getCpf())
+                .name(customer.getName().name())
+                .email(customer.getEmail().value())
+                .cpf(customer.getCpf().cpf())
                 .build();
     }
 }

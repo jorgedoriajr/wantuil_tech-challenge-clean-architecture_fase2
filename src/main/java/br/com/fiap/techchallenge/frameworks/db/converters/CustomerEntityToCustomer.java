@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomerEntityToCustomer {
 
-    public Customer convert(CustomerEntity customerEntity) {
+    public Customer convert(final CustomerEntity customerEntity) {
         return Customer
                 .builder()
                 .id(customerEntity.getId().toString())

@@ -42,7 +42,7 @@ public class OrderRepositoryImpl implements OrderGateway {
     }
 
     @Override
-    public List<Order> findByStatus(List<String> status) {
+    public List<Order> findByStatus(final List<String> status) {
         final var orderEntities = springDataOrderRepository.findByStatus(status);
 
         return orderEntities

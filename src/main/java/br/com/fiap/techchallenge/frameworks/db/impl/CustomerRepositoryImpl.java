@@ -19,7 +19,7 @@ public class CustomerRepositoryImpl implements CustomerGateway {
     private final CustomerEntityToCustomer customerEntityToCustomer;
 
     @Override
-    public Customer create(Customer customer) {
+    public Customer create(final Customer customer) {
         var customerEntity = customerToCustomerEntity.convert(customer);
         customerEntity = springDataCustomerRepository.save(customerEntity);
 
@@ -27,8 +27,8 @@ public class CustomerRepositoryImpl implements CustomerGateway {
     }
 
     @Override
-    public Customer findByCpf(String cpf) {
-        var customerEntity = springDataCustomerRepository.findByCpf(cpf);
+    public Customer findByCpf(final String cpf) {
+        final var customerEntity = springDataCustomerRepository.findByCpf(cpf);
 
         return customerEntityToCustomer.convert(customerEntity);
     }

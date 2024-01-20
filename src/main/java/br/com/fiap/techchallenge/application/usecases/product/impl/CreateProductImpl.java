@@ -10,7 +10,7 @@ public class CreateProductImpl implements CreateProduct {
     private final ProductGateway productGateway;
 
     @Override
-    public Product create(Product product) {
+    public Product create(final Product product) {
         return productGateway.create(product);
     }
 

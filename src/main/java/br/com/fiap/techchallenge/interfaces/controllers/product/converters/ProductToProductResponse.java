@@ -9,11 +9,11 @@ public class ProductToProductResponse {
     public ProductResponse convert(final Product product) {
         return ProductResponse.builder()
                 .id(product.getId())
-                .name(product.getName().getName())
+                .name(product.getName().name())
                 .category(product.getCategory().getCategory().name())
-                .price(product.getPrice().getPrice())
-                .description(product.getDescription().getDescription())
-                .image(product.getImage().getImage())
+                .price(product.getPrice().price())
+                .description(product.getDescription().description())
+                .image(product.getImage().image())
                 .build();
     }
 }

@@ -10,7 +10,7 @@ public class OrderCheckoutImpl implements OrderCheckout {
     private final OrderGateway orderGateway;
 
     @Override
-    public Order checkout(Order order) {
+    public Order checkout(final Order order) {
         return orderGateway.checkout(order);
     }
 }

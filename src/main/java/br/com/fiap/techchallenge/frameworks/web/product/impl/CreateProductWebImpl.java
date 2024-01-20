@@ -5,7 +5,6 @@ import br.com.fiap.techchallenge.interfaces.controllers.product.CreateProductCon
 import br.com.fiap.techchallenge.interfaces.controllers.product.requests.ProductRequest;
 import br.com.fiap.techchallenge.interfaces.controllers.product.responses.ProductResponse;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @AllArgsConstructor
 public class CreateProductWebImpl implements CreateProductWeb {

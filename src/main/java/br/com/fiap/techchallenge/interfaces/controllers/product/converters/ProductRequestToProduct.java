@@ -10,14 +10,14 @@ import br.com.fiap.techchallenge.interfaces.controllers.product.requests.Product
 
 public class ProductRequestToProduct {
 
-    public Product convert(ProductRequest productRequests) {
+    public Product convert(final ProductRequest productRequests) {
         return Product.builder()
-                .id(productRequests.getId())
-                .name(new ProductName(productRequests.getName()))
-                .category(new ProductCategory(productRequests.getCategory()))
-                .price(new ProductPrice(productRequests.getPrice()))
-                .description(new ProductDescription(productRequests.getDescription()))
-                .image(new ProductImage(productRequests.getImage()))
+                .id(productRequests.id())
+                .name(new ProductName(productRequests.name()))
+                .category(new ProductCategory(productRequests.category()))
+                .price(new ProductPrice(productRequests.price()))
+                .description(new ProductDescription(productRequests.description()))
+                .image(new ProductImage(productRequests.image()))
                 .build();
 
     }

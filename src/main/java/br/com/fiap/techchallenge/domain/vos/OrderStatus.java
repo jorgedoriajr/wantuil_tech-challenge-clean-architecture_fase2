@@ -11,13 +11,13 @@ public class OrderStatus {
 
     OrderStatusEnum status;
 
-    public OrderStatus(String status) {
+    public OrderStatus(final String status) {
         validate(status);
 
         this.status = OrderStatusEnum.valueOf(status);
     }
 
-    private void validate(String status) {
+    private void validate(final String status) {
         if (status == null) {
             throw new IllegalArgumentException("Status cannot be null");
         }

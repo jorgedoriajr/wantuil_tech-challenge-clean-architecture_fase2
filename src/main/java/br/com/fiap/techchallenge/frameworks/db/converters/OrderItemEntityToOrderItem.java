@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderItemEntityToOrderItem {
 
-    public OrderItem convert(OrderItemEntity orderItemEntity) {
+    public OrderItem convert(final OrderItemEntity orderItemEntity) {
         return OrderItem
                 .builder()
                 .product(orderItemEntity.getProduct().toString())

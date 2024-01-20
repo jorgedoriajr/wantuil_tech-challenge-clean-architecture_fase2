@@ -27,12 +27,17 @@ public class OrderItemEntity {
     @Id
     @GeneratedValue
     private UUID id;
+
     @Setter
     @ManyToOne
     @JoinColumn(name = "order_id")
     private OrderEntity order;
+
     @Column(name = "product_id")
     private UUID product;
+
     private Integer quantity;
+
     private Double price;
+
 }

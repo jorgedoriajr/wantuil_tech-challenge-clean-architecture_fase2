@@ -1,22 +1,12 @@
 package br.com.fiap.techchallenge.domain.vos;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
-
-@Getter
-@ToString
-@EqualsAndHashCode
-public class CustomerName {
-    private String name;
-
-    public CustomerName(String name) {
+public record CustomerName(String name) {
+    public CustomerName {
         validate(name);
 
-        this.name = name;
     }
 
-    private void validate(String name) {
+    private void validate(final String name) {
         if (name == null || name.isEmpty()) {
             return;
         }

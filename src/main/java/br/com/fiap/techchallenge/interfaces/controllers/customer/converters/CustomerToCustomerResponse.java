@@ -8,9 +8,9 @@ public class CustomerToCustomerResponse {
     public CustomerResponse convert(final Customer customer) {
         return CustomerResponse.builder()
                 .id(customer.getId())
-                .cpf(customer.getCpf().getCpf())
-                .name(customer.getName().getName())
-                .email(customer.getEmail().getEmail())
+                .cpf(customer.getCpf().cpf())
+                .name(customer.getName().name())
+                .email(customer.getEmail().value())
                 .build();
     }
 }

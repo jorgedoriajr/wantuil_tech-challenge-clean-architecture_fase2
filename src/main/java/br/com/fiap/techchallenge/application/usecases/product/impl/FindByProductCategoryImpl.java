@@ -12,7 +12,7 @@ public class FindByProductCategoryImpl implements FindProductByCategory {
     private final ProductGateway productGateway;
 
     @Override
-    public List<Product> findByCategory(String category) {
+    public List<Product> findByCategory(final String category) {
         return productGateway.findByCategory(category);
     }
 

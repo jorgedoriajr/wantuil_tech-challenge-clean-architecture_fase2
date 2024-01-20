@@ -9,7 +9,7 @@ public class RemoveProductImpl implements RemoveProduct {
     private final ProductGateway productGateway;
 
     @Override
-    public void remove(String id) {
+    public void remove(final String id) {
         productGateway.remove(id);
     }
 }

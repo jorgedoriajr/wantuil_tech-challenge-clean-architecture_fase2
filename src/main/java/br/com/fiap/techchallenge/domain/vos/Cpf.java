@@ -1,22 +1,12 @@
 package br.com.fiap.techchallenge.domain.vos;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
-
-@Getter
-@ToString
-@EqualsAndHashCode
-public class Cpf {
-    private final String cpf;
-
-    public Cpf(String cpf) {
+public record Cpf(String cpf) {
+    public Cpf {
         validate(cpf);
 
-        this.cpf = cpf;
     }
 
-    private void validate(String cpf) {
+    private void validate(final String cpf) {
         if (cpf == null || cpf.isEmpty()) {
             return;
         }

@@ -19,7 +19,7 @@ public class OrderCheckoutControllerImpl implements OrderCheckoutController {
 
     private final OrderToOrderResponse orderToOrderResponse;
 
-    public OrderResponse create(OrderRequest orderRequest) {
+    public OrderResponse create(final OrderRequest orderRequest) {
         log.info("Creating product {}", orderRequest);
 
         var order = orderRequestToOrder.convert(orderRequest);

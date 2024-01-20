@@ -28,11 +28,17 @@ public class OrderEntity {
     @Id
     @GeneratedValue
     private UUID id;
+
     @ManyToOne
     private CustomerEntity customer;
+
     @OneToMany(mappedBy = "order")
     private List<OrderItemEntity> items;
+
     private String status;
+
     private LocalDate created;
+
     private Double amount;
+    
 }

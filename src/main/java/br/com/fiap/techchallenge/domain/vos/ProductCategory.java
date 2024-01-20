@@ -11,13 +11,13 @@ import lombok.ToString;
 public class ProductCategory {
     ProductCategoryEnum category;
 
-    public ProductCategory(String category) {
+    public ProductCategory(final String category) {
         validate(category);
 
         this.category = ProductCategoryEnum.valueOf(category);
     }
 
-    private void validate(String category) {
+    private void validate(final String category) {
         if (category == null) {
             throw new IllegalArgumentException("Category cannot be null");
         }

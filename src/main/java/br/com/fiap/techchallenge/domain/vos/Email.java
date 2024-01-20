@@ -1,22 +1,12 @@
 package br.com.fiap.techchallenge.domain.vos;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+public record Email(String value) {
+    public Email {
+        validate(value);
 
-@Getter
-@ToString
-@EqualsAndHashCode
-public class Email {
-    private final String email;
-
-    public Email(String email) {
-        validate(email);
-
-        this.email = email;
     }
 
-    private void validate(String email) {
+    private void validate(final String email) {
         if (email == null || email.isEmpty()) {
             return;
         }

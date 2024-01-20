@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductEntityToProduct {
 
-    public Product convert(ProductEntity productEntity) {
+    public Product convert(final ProductEntity productEntity) {
         return Product
                 .builder()
                 .id(productEntity.getId().toString())

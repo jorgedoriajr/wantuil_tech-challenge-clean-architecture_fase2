@@ -17,7 +17,7 @@ public class OrderEntityToOrder {
 
     private OrderItemEntityToOrderItem orderItemEntityToOrderItem;
 
-    public Order convert(OrderEntity orderEntity) {
+    public Order convert(final OrderEntity orderEntity) {
         return Order
                 .builder()
                 .id(orderEntity.getId().toString())

@@ -10,7 +10,7 @@ public class FindCustomerByCpfWebImpl implements FindCustomerByCpfWeb {
 
     private final FindCustomerByCpfController customerFindByCpfController;
 
-    public CustomerResponse findByCpf(String cpf) {
+    public CustomerResponse findByCpf(final String cpf) {
         return customerFindByCpfController.findByCpf(cpf);
     }
 }

@@ -31,7 +31,7 @@ public class ProductRepositoryImpl implements ProductGateway {
     }
 
     @Override
-    public List<Product> findByCategory(String category) {
+    public List<Product> findByCategory(final String category) {
         return springDataProductRepository.findByCategory(category)
                 .stream()
                 .map(productEntityToProduct::convert)
@@ -39,7 +39,7 @@ public class ProductRepositoryImpl implements ProductGateway {
     }
 
     @Override
-    public Product create(Product product) {
+    public Product create(final Product product) {
         var productEntity = productToProductEntity.convert(product);
         productEntity = springDataProductRepository.save(productEntity);
 
@@ -47,22 +47,22 @@ public class ProductRepositoryImpl implements ProductGateway {
     }
 
     @Override
-    public Product update(String id, Product product) {
+    public Product update(final String id, final Product product) {
         var productEntity = springDataProductRepository
                 .findById(UUID.fromString(product.getId())).orElseThrow();
 
-        productEntity.setName(product.getName().getName());
+        productEntity.setName(product.getName().name());
         productEntity.setCategory(product.getCategory().getCategory().name());
-        productEntity.setPrice(product.getPrice().getPrice());
-        productEntity.setDescription(product.getDescription().getDescription());
-        productEntity.setImage(product.getImage().getImage());
+        productEntity.setPrice(product.getPrice().price());
+        productEntity.setDescription(product.getDescription().description());
+        productEntity.setImage(product.getImage().image());
         productEntity = springDataProductRepository.save(productEntity);
 
         return productEntityToProduct.convert(productEntity);
     }
 
     @Override
-    public void remove(String id) {
+    public void remove(final String id) {
         springDataProductRepository.deleteById(UUID.fromString(id));
     }
 }
