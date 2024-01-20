@@ -8,7 +8,6 @@ import br.com.fiap.techchallenge.interfaces.controllers.order.requests.OrderRequ
 import br.com.fiap.techchallenge.interfaces.controllers.order.responses.OrderResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @AllArgsConstructor
 @Slf4j
@@ -20,7 +19,7 @@ public class OrderCheckoutControllerImpl implements OrderCheckoutController {
 
     private final OrderToOrderResponse orderToOrderResponse;
 
-    public OrderResponse create(@RequestBody OrderRequest orderRequest) {
+    public OrderResponse create(OrderRequest orderRequest) {
         log.info("Creating product {}", orderRequest);
 
         var order = orderRequestToOrder.convert(orderRequest);
