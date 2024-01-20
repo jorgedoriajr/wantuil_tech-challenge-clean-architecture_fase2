@@ -14,7 +14,7 @@ public class OrderListNotDoneImpl implements OrderListNotDone {
     private final OrderGateway orderGateway;
 
     @Override
-    public List<Order> orderWait() {
+    public List<Order> orderListNotDone() {
         final var status = List.of(DeliveryStatusEnum.READY.toString(),
                 DeliveryStatusEnum.PREPARING.toString(),
                 DeliveryStatusEnum.RECEIVED.toString());

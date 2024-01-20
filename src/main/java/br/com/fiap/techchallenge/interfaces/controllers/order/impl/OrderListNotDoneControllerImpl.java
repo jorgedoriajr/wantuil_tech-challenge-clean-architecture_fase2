@@ -16,7 +16,7 @@ public class OrderListNotDoneControllerImpl implements OrderListNotDoneControlle
     private final OrderToOrderResponse orderToOrderResponse;
 
     public List<OrderResponse> orderListNotDone() {
-        final var orders = orderListNotDone.orderWait();
+        final var orders = orderListNotDone.orderListNotDone();
 
         return orders.stream().map(orderToOrderResponse::convert).toList();
     }

@@ -71,4 +71,11 @@ public class OrderRepositoryImpl implements OrderGateway {
 
         return orderEntityToOrder.convert(orderEntity);
     }
+
+    @Override
+    public Order findById(final String id) {
+        final var oderEntity = springDataOrderRepository.findById(UUID.fromString(id)).orElseThrow();
+
+        return orderEntityToOrder.convert(oderEntity);
+    }
 }

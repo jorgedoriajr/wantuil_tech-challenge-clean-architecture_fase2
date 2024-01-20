@@ -2,20 +2,24 @@ package br.com.fiap.techchallenge.frameworks.configs;
 
 import br.com.fiap.techchallenge.application.gateways.OrderGateway;
 import br.com.fiap.techchallenge.application.usecases.order.FindOrderByDeliveryStatus;
+import br.com.fiap.techchallenge.application.usecases.order.FindOrderById;
 import br.com.fiap.techchallenge.application.usecases.order.OrderCheckout;
 import br.com.fiap.techchallenge.application.usecases.order.OrderListNotDone;
 import br.com.fiap.techchallenge.application.usecases.order.UpdateDeliveryStatus;
 import br.com.fiap.techchallenge.application.usecases.order.UpdatePaymentStatus;
+import br.com.fiap.techchallenge.application.usecases.order.impl.FindOrderByIdImpl;
 import br.com.fiap.techchallenge.application.usecases.order.impl.OrderCheckoutImpl;
 import br.com.fiap.techchallenge.application.usecases.order.impl.OrderListNotDoneImpl;
 import br.com.fiap.techchallenge.application.usecases.order.impl.UpdateDeliveryStatusImpl;
 import br.com.fiap.techchallenge.application.usecases.order.impl.UpdatePaymentStatusImpl;
 import br.com.fiap.techchallenge.frameworks.web.order.FindOrderByDeliveryStatusWeb;
+import br.com.fiap.techchallenge.frameworks.web.order.FindOrderByIdWeb;
 import br.com.fiap.techchallenge.frameworks.web.order.OrderCheckoutWeb;
 import br.com.fiap.techchallenge.frameworks.web.order.OrderListNotDoneWeb;
 import br.com.fiap.techchallenge.frameworks.web.order.UpdateDeliveryStatusWeb;
 import br.com.fiap.techchallenge.frameworks.web.order.UpdatePaymentStatusWebhook;
 import br.com.fiap.techchallenge.frameworks.web.order.impl.FindOrderByDeliveryStatusWebImpl;
+import br.com.fiap.techchallenge.frameworks.web.order.impl.FindOrderByIdWebImpl;
 import br.com.fiap.techchallenge.frameworks.web.order.impl.OrderCheckoutWebImpl;
 import br.com.fiap.techchallenge.frameworks.web.order.impl.OrderListNotDoneWebImpl;
 import br.com.fiap.techchallenge.frameworks.web.order.impl.UpdateDeliveryStatusWebImpl;
@@ -23,6 +27,7 @@ import br.com.fiap.techchallenge.frameworks.web.order.impl.UpdatePaymentStatusWe
 import br.com.fiap.techchallenge.interfaces.controllers.customer.converters.CustomerRequestToCustomer;
 import br.com.fiap.techchallenge.interfaces.controllers.customer.converters.CustomerToCustomerResponse;
 import br.com.fiap.techchallenge.interfaces.controllers.order.FindOrderByDeliveryStatusController;
+import br.com.fiap.techchallenge.interfaces.controllers.order.FindOrderByIdController;
 import br.com.fiap.techchallenge.interfaces.controllers.order.OrderCheckoutController;
 import br.com.fiap.techchallenge.interfaces.controllers.order.OrderListNotDoneController;
 import br.com.fiap.techchallenge.interfaces.controllers.order.UpdateDeliveryStatusController;
@@ -30,6 +35,7 @@ import br.com.fiap.techchallenge.interfaces.controllers.order.UpdatePaymentStatu
 import br.com.fiap.techchallenge.interfaces.controllers.order.converters.OrderRequestToOrder;
 import br.com.fiap.techchallenge.interfaces.controllers.order.converters.OrderToOrderResponse;
 import br.com.fiap.techchallenge.interfaces.controllers.order.impl.FindOrderByDeliveryStatusControllerImpl;
+import br.com.fiap.techchallenge.interfaces.controllers.order.impl.FindOrderByIdControllerImpl;
 import br.com.fiap.techchallenge.interfaces.controllers.order.impl.OrderCheckoutControllerImpl;
 import br.com.fiap.techchallenge.interfaces.controllers.order.impl.OrderListNotDoneControllerImpl;
 import br.com.fiap.techchallenge.interfaces.controllers.order.impl.UpdateDeliveryStatusControllerImpl;
@@ -129,5 +135,21 @@ public class OrderBean {
     @Bean
     UpdatePaymentStatusWebhook updatePaymentStatusWebhook(final UpdatePaymentStatusController updatePaymentStatusController) {
         return new UpdatePaymentStatusWebhookImpl(updatePaymentStatusController);
+    }
+
+    @Bean
+    FindOrderById findOrderById(final OrderGateway orderGateway) {
+        return new FindOrderByIdImpl(orderGateway);
+    }
+
+    @Bean
+    FindOrderByIdController findOrderByIdController(final FindOrderById findOrderById,
+                                                    final OrderToOrderResponse orderToOrderResponse) {
+        return new FindOrderByIdControllerImpl(findOrderById, orderToOrderResponse);
+    }
+
+    @Bean
+    FindOrderByIdWeb findOrderByIdWeb(final FindOrderByIdController findOrderByIdController) {
+        return new FindOrderByIdWebImpl(findOrderByIdController);
     }
 }

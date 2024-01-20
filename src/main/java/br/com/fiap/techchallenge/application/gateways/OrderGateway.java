@@ -14,4 +14,5 @@ public interface OrderGateway {
 
     Order updatePaymentStatus(String id, String paymentStatus);
 
+    Order findById(String id);
 }
