@@ -11,7 +11,8 @@ import lombok.Builder;
 public record OrderResponse(String id,
                             CustomerResponse customer,
                             List<OrderItemResponse> items,
-                            String status,
+                            String deliveryStatus,
+                            String paymentStatus,
                             LocalDate created,
                             Double amount) {
 

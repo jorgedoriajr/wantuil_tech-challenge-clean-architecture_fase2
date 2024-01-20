@@ -1,6 +1,5 @@
 package br.com.fiap.techchallenge.frameworks.web.product;
 
-import br.com.fiap.techchallenge.interfaces.controllers.product.UpdateProductController;
 import br.com.fiap.techchallenge.interfaces.controllers.product.requests.ProductRequest;
 import br.com.fiap.techchallenge.interfaces.controllers.product.responses.ProductResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public interface UpdateProductWeb extends UpdateProductController {
+public interface UpdateProductWeb {
 
     @Operation(summary = "Update a new product",
             responses = {

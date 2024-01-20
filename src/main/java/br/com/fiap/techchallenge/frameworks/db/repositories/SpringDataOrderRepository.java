@@ -12,6 +12,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SpringDataOrderRepository extends JpaRepository<OrderEntity, UUID> {
 
-    @Query("SELECT oe FROM OrderEntity oe WHERE oe.status IN :status")
-    List<OrderEntity> findByStatus(@Param("status") List<String> status);
+    @Query("SELECT oe FROM OrderEntity oe WHERE oe.deliveryStatus IN :status")
+    List<OrderEntity> findByDeliveryStatus(@Param("status") List<String> status);
 }

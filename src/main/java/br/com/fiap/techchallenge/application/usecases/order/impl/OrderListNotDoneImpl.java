@@ -4,22 +4,22 @@ import java.util.Comparator;
 import java.util.List;
 
 import br.com.fiap.techchallenge.application.gateways.OrderGateway;
-import br.com.fiap.techchallenge.application.usecases.order.ListOrderWait;
+import br.com.fiap.techchallenge.application.usecases.order.OrderListNotDone;
 import br.com.fiap.techchallenge.domain.entities.Order;
-import br.com.fiap.techchallenge.domain.enums.OrderStatusEnum;
+import br.com.fiap.techchallenge.domain.enums.DeliveryStatusEnum;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class ListOrderWaitImpl implements ListOrderWait {
+public class OrderListNotDoneImpl implements OrderListNotDone {
     private final OrderGateway orderGateway;
 
     @Override
     public List<Order> orderWait() {
-        final var status = List.of(OrderStatusEnum.READY.toString(),
-                OrderStatusEnum.PREPARING.toString(),
-                OrderStatusEnum.RECEIVED.toString());
+        final var status = List.of(DeliveryStatusEnum.READY.toString(),
+                DeliveryStatusEnum.PREPARING.toString(),
+                DeliveryStatusEnum.RECEIVED.toString());
 
-        final var orders = orderGateway.findByStatus(status);
+        final var orders = orderGateway.findByDeliveryStatus(status);
 
         return orders.stream()
                 .sorted(Comparator.comparing(Order::getCreated))

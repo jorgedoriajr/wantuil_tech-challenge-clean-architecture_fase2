@@ -1,6 +1,5 @@
 package br.com.fiap.techchallenge.frameworks.web.order;
 
-import br.com.fiap.techchallenge.interfaces.controllers.order.OrderCheckoutController;
 import br.com.fiap.techchallenge.interfaces.controllers.order.requests.OrderRequest;
 import br.com.fiap.techchallenge.interfaces.controllers.order.responses.OrderResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public interface OrderCheckoutWeb extends OrderCheckoutController {
+public interface OrderCheckoutWeb {
 
     @Operation(summary = "Checkout a new order",
             responses = {

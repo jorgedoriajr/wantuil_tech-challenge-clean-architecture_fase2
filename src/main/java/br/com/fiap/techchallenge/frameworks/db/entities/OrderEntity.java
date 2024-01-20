@@ -35,10 +35,12 @@ public class OrderEntity {
     @OneToMany(mappedBy = "order")
     private List<OrderItemEntity> items;
 
-    private String status;
+    private String deliveryStatus;
+
+    private String paymentStatus;
 
     private LocalDate created;
 
     private Double amount;
-    
+
 }

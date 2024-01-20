@@ -1,6 +1,6 @@
 package br.com.fiap.techchallenge.domain.enums;
 
-public enum OrderStatusEnum {
+public enum DeliveryStatusEnum {
     RECEIVED,
     PREPARING,
     READY,

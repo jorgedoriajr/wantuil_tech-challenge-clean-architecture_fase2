@@ -1,6 +1,7 @@
 package br.com.fiap.techchallenge.frameworks.db.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import br.com.fiap.techchallenge.application.gateways.OrderGateway;
 import br.com.fiap.techchallenge.domain.entities.Order;
@@ -42,12 +43,32 @@ public class OrderRepositoryImpl implements OrderGateway {
     }
 
     @Override
-    public List<Order> findByStatus(final List<String> status) {
-        final var orderEntities = springDataOrderRepository.findByStatus(status);
+    public List<Order> findByDeliveryStatus(final List<String> status) {
+        final var orderEntities = springDataOrderRepository.findByDeliveryStatus(status);
 
         return orderEntities
                 .stream()
                 .map(orderEntityToOrder::convert)
                 .toList();
+    }
+
+    @Override
+    public Order updateDeliveryStatus(String id, String deliveryStatus) {
+        var orderEntity = springDataOrderRepository.findById(UUID.fromString(id)).orElseThrow();
+
+        orderEntity.setDeliveryStatus(deliveryStatus);
+        orderEntity = springDataOrderRepository.save(orderEntity);
+
+        return orderEntityToOrder.convert(orderEntity);
+    }
+
+    @Override
+    public Order updatePaymentStatus(String id, String paymentStatus) {
+        var orderEntity = springDataOrderRepository.findById(UUID.fromString(id)).orElseThrow();
+
+        orderEntity.setPaymentStatus(paymentStatus);
+        orderEntity = springDataOrderRepository.save(orderEntity);
+
+        return orderEntityToOrder.convert(orderEntity);
     }
 }

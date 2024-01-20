@@ -3,8 +3,9 @@ package br.com.fiap.techchallenge.frameworks.db.converters;
 import java.util.Objects;
 
 import br.com.fiap.techchallenge.domain.entities.Order;
+import br.com.fiap.techchallenge.domain.vos.DeliveryStatus;
 import br.com.fiap.techchallenge.domain.vos.OrderAmount;
-import br.com.fiap.techchallenge.domain.vos.OrderStatus;
+import br.com.fiap.techchallenge.domain.vos.PaymentStatus;
 import br.com.fiap.techchallenge.frameworks.db.entities.OrderEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -23,7 +24,8 @@ public class OrderEntityToOrder {
                 .id(orderEntity.getId().toString())
                 .customer(Objects.nonNull(orderEntity.getCustomer()) ? customerEntityToCustomer.convert(orderEntity.getCustomer()) : null)
                 .items(orderEntity.getItems().stream().map(orderItemEntityToOrderItem::convert).toList())
-                .status(new OrderStatus(orderEntity.getStatus()))
+                .deliveryStatus(new DeliveryStatus(orderEntity.getDeliveryStatus()))
+                .paymentStatus(new PaymentStatus(orderEntity.getPaymentStatus()))
                 .created(orderEntity.getCreated())
                 .amount(new OrderAmount(orderEntity.getAmount()))
                 .build();

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public interface FindProductByCategoryWeb extends FindProductByCategoryController {
+public interface FindProductByCategoryWeb {
 
     @Operation(summary = "Find by category",
             responses = {

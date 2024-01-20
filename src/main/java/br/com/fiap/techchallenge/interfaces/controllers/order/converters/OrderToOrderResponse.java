@@ -22,7 +22,8 @@ public class OrderToOrderResponse {
                         .price(item.price())
                         .quantity(item.quantity())
                         .build()).toList())
-                .status(order.getStatus().getStatus().toString())
+                .deliveryStatus(order.getDeliveryStatus().getStatus().toString())
+                .paymentStatus(order.getPaymentStatus().getStatus().toString())
                 .created(order.getCreated())
                 .amount(order.getAmount().amount())
                 .build();

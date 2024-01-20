@@ -1,6 +1,5 @@
 package br.com.fiap.techchallenge.frameworks.web.customer;
 
-import br.com.fiap.techchallenge.interfaces.controllers.customer.CreateCustomerController;
 import br.com.fiap.techchallenge.interfaces.controllers.customer.requests.CustomerRequest;
 import br.com.fiap.techchallenge.interfaces.controllers.customer.responses.CustomerResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public interface CreateCustomerWeb extends CreateCustomerController {
+public interface CreateCustomerWeb {
 
     @Operation(summary = "Create a new customer",
             responses = {

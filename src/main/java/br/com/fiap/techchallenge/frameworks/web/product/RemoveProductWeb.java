@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public interface RemoveProductWeb extends RemoveProductController {
+public interface RemoveProductWeb {
 
     @Operation(summary = "Remove a product by id",
             responses = {

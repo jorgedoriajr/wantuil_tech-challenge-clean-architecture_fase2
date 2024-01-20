@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public interface FindProductWeb extends FindProductController {
+public interface FindProductWeb {
 
     @Operation(summary = "List products",
             responses = {

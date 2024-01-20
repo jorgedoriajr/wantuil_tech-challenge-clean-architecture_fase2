@@ -3,9 +3,10 @@ package br.com.fiap.techchallenge.interfaces.controllers.order.converters;
 import java.util.Objects;
 
 import br.com.fiap.techchallenge.domain.entities.Order;
+import br.com.fiap.techchallenge.domain.vos.DeliveryStatus;
 import br.com.fiap.techchallenge.domain.vos.OrderAmount;
 import br.com.fiap.techchallenge.domain.vos.OrderItem;
-import br.com.fiap.techchallenge.domain.vos.OrderStatus;
+import br.com.fiap.techchallenge.domain.vos.PaymentStatus;
 import br.com.fiap.techchallenge.interfaces.controllers.customer.converters.CustomerRequestToCustomer;
 import br.com.fiap.techchallenge.interfaces.controllers.order.requests.OrderRequest;
 import lombok.AllArgsConstructor;
@@ -27,7 +28,8 @@ public class OrderRequestToOrder {
                                 .price(item.price())
                                 .build())
                         .toList())
-                .status(new OrderStatus(orderRequest.status()))
+                .deliveryStatus(new DeliveryStatus(orderRequest.deliveryStatus()))
+                .paymentStatus(new PaymentStatus(orderRequest.paymentStatus()))
                 .created(orderRequest.created())
                 .amount(new OrderAmount(orderRequest.amount()))
                 .build();

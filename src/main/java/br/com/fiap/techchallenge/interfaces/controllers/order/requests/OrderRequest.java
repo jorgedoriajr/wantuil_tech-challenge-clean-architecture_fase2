@@ -10,7 +10,8 @@ import lombok.Builder;
 public record OrderRequest(String id,
                            CustomerRequest customer,
                            List<OrderItemRequest> items,
-                           String status,
+                           String deliveryStatus,
+                           String paymentStatus,
                            LocalDate created,
                            Double amount) {
 

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public interface FindCustomerByCpfWeb extends FindCustomerByCpfController {
+public interface FindCustomerByCpfWeb {
 
     @Operation(summary = "Find by CPF",
             responses = {

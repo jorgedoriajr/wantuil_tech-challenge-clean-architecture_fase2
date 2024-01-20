@@ -8,6 +8,10 @@ import br.com.fiap.techchallenge.domain.entities.Order;
 public interface OrderGateway {
     Order checkout(Order order);
 
-    List<Order> findByStatus(List<String> status);
+    List<Order> findByDeliveryStatus(List<String> status);
+
+    Order updateDeliveryStatus(String id, String deliveryStatus);
+
+    Order updatePaymentStatus(String id, String paymentStatus);
 
 }

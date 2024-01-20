@@ -4,7 +4,7 @@ import java.util.List;
 
 import br.com.fiap.techchallenge.domain.entities.Order;
 
-public interface ListOrderWait {
+public interface OrderListNotDone {
 
     List<Order> orderWait();
 }
