@@ -19,7 +19,7 @@ DDD: [miro](https://miro.com/welcomeonboard/Z2hwMTJic3V1akhyZmxTNGtTMWNTWXp4VnVP
 
 ### **Clean Architecture**
 
-![Clean Architecture](doc/techchallenge-clean-architecture.png)
+![Clean Architecture](./doc/image/techchallenge-clean-architecture.png)
 
 Para garantir a separação de responsabilidades e a independência das regras de negócios em relação a frameworks e interfaces de usuário, esse software foi desenvolvido baseado na Clean Architecture.
 
@@ -64,7 +64,7 @@ Sendo implementando os seguintes objetos do Kubernetes, contidos no diretório k
   
 
 ### **Pontos de evolução (AWS)**
-![AWS](/run/user/1000/doc/6f95eadb/techchallenge-aws.png)
+![AWS](./doc/image/techchallenge-aws.png)
 
 Esta arquitetura representa uma evolução da aplicação na AWS, focando em reforçar a segurança e a performance, utilizando as seguintes soluções:
 * **AWS Shield:** Serviço de proteção contra DDoS que salvaguarda aplicativos executados na AWS. Está posicionado na camada mais externa, logo após a entrada de tráfego da internet, protegendo toda a infraestrutura downstream.
