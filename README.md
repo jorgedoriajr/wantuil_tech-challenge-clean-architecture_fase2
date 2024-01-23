@@ -19,7 +19,7 @@ DDD: [miro](https://miro.com/welcomeonboard/Z2hwMTJic3V1akhyZmxTNGtTMWNTWXp4VnVP
 
 ### **Clean Architecture**
 
-![Clean Architecture](/run/user/1000/doc/9a16e005/techchallenge-clean-architecture.png)
+![Clean Architecture](doc/techchallenge-clean-architecture.png)
 
 Para garantir a separação de responsabilidades e a independência das regras de negócios em relação a frameworks e interfaces de usuário, esse software foi desenvolvido baseado na Clean Architecture.
 
